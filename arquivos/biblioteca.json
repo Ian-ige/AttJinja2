@@ -1,0 +1,13 @@
+[
+    {
+        "isbn": "978-8535914849",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "genero": "Distopia",
+        "ano_publicacao": 1949,
+        "editora": "Companhia das Letras",
+        "paginas": 416,
+        "status": "disponivel",
+        "localizacao": "Estante A1, Prateleira 2"
+    }
+]
