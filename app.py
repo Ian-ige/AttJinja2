@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template, send_from_directory, redirect, url_for
+from flask import Flask, jsonify, request, render_template, send_from_directory, redirect, url_for # type: ignore
 import dados
 
 biblioteca = dados.carregar_do_arquivo()
