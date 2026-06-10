@@ -9,5 +9,38 @@
         "paginas": 416,
         "status": "disponivel",
         "localizacao": "Estante A1, Prateleira 2"
+    },
+    {
+        "isbn": "978-8595084377",
+        "titulo": "O Silmarillion",
+        "autor": "J.R.R. Tolkien",
+        "genero": "Fantasia",
+        "ano_publicacao": 2019,
+        "editora": "HarperCollins",
+        "paginas": 496,
+        "status": "disponivel",
+        "localizacao": "Estante A2, Prateleira 2"
+    },
+    {
+        "isbn": "456456",
+        "titulo": "ggg",
+        "autor": "fghf",
+        "genero": "gfhf",
+        "ano_publicacao": "1800",
+        "editora": "dgfg",
+        "paginas": "3000",
+        "status": "Disponivel",
+        "localizacao": "dfssgsgd"
+    },
+    {
+        "isbn": "hsghfgh",
+        "titulo": "hgdfhffgh",
+        "autor": "ghdfghdgh",
+        "genero": "fdhgggh",
+        "ano_publicacao": "dgh",
+        "editora": "dfghdfghdg",
+        "paginas": "hdghdfgh",
+        "status": "dfghdfghdf",
+        "localizacao": "ghdfghdfg"
     }
 ]

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template, send_from_directory, redirect, url_for # type: ignore
+from flask import Flask, jsonify, request, render_template, send_from_directory, redirect, url_for
 import dados
 
 biblioteca = dados.carregar_do_arquivo()
@@ -79,14 +79,30 @@ def interface_web():
     """ Função para gerenciamento via interface web
     """
     biblioteca = dados.carregar_do_arquivo()
+    return render_template('biblioteca.html',biblioteca=biblioteca)
+
+@app.route('/biblioteca/criar', methods=['GET', 'POST'])
+def cria_livro():
     if request.method == 'POST':
-        isbn = request.args.get('isbn')
-        if deletar_livro(isbn) == True:
-            return redirect(url_for('interface_web'))
-        else:
-            return "Livro não existe", 404
+        novo_livro = {
+                    'isbn': request.form.get('isbn'),
+                    'titulo': request.form.get('titulo'),
+                    'autor': request.form.get('autor'),
+                    "genero": request.form.get('genero'),
+                    "ano_publicacao": request.form.get('ano_publicacao'),
+                    "editora": request.form.get('editora'),
+                    "paginas": request.form.get('paginas'),
+                    "status": request.form.get('status'),
+                    "localizacao": request.form.get('localizacao')
+                }
+        for l in biblioteca:
+            if l['isbn'] == novo_livro['isbn']:
+                return jsonify("Livro já está cadastrado"), 200
+        biblioteca.append(novo_livro)
+        dados.salvar_no_arquivo(biblioteca)
+        return redirect(interface_web)
     else:
-        return render_template('biblioteca.html',biblioteca=biblioteca)
+        return render_template('criar_livro.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
